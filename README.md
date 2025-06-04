@@ -23,11 +23,13 @@ This repository contains a simple Python implementation of a Coordinate Ascent V
 
 ## Project Overview
 
-A **mixture of Gaussians** assumes that each data point is generated from one of \(K\) Gaussian components. In a **Bayesian** formulation, we place priors on the component means and variances. However, computing the exact posterior \(p(\{\mu_k, \sigma_k^2\}, \{z_i\} \mid x_{1:N})\) is intractable. Instead, we use **Variational Inference**, specifically **Coordinate Ascent Variational Inference (CAVI)**, to approximate the posterior with a factorized variational distribution:
-\[
+A **mixture of Gaussians** assumes that each data point is generated from one of $K$ Gaussian components. In a **Bayesian** formulation, we place priors on the component means and variances. However, computing the exact posterior $p(\{\mu_k, \sigma_k^2\}, \{z_i\} \mid x_{1:N})$ is intractable. Instead, we use **Variational Inference**, specifically **Coordinate Ascent Variational Inference (CAVI)**, to approximate the posterior with a factorized variational distribution:
+
+$$
 q(\mu, \sigma^2, z) \;=\; \prod_{k=1}^K q(\mu_k)\,q(\sigma_k^2)\,\prod_{i=1}^N q(z_i).
-\]
-This script implements closed‐form updates for \(q(z_i)\), \(q(\mu_k)\), and \(q(\sigma_k^2)\) in one dimension.  
+$$
+
+This script implements closed‐form updates for $q(z_i)$, $q(\mu_k)$, and $q(\sigma_k^2)$ in one dimension.  
 
 The main goals of this code are:  
 - Demonstrate how to set up and run a CAVI algorithm for a simple Bayesian mixture model.  
